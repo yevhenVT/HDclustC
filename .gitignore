@@ -1,0 +1,5 @@
+*.o
+ridgeline_md
+trainmaster_mpi
+testsync_mpi
+

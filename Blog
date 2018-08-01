@@ -1,0 +1,17 @@
+Copied from Hmmvb_package_v1.3 and revised based on that.
+
+Designed specifically for Diagonal Gaussian covariance. Anticipate
+very high dimensions. Hence sigma_det field in GaussModel is changed
+to sigma_det_log. Only use the log of the determinant. A series of
+functions are changed, including file IO.
+
+---- Aug 29, 2017 ----
+The previous #define DIAGCOV is now changed to a global constant.
+The declaration is made in hmm.h.
+
+The definition of DIAGCOV is in estimate.c which is visible to both
+trainmaster.c and testsync.c.
+
+trainmaster.c, testsync.c, ridgeline_md all have an option of
+specifying whether diagonal covariance is used. "-v" flag means
+diagonal covariance. If not flagged, non-diagonal is the default.
